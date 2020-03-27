@@ -12,7 +12,7 @@ let
 
   projectWithClang = with pkgs; projectWithGcc.override {
     # This override breaks LTO detection
-    stdenv = pkgs.overrideCC stdenv clang_9;
+    stdenv = pkgs.overrideCC stdenv [ clang_9 llvmPackages_9.llvm ];
   };
 
   projectDefinition =
